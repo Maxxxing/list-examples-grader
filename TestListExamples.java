@@ -3,6 +3,7 @@ import org.junit.*;
 import java.util.ArrayList;
 import java.util.List;
 
+//22222222222222222222222222
 class CheckString implements StringChecker {
     @Override
     public boolean checkString(String s) {
