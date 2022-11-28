@@ -12,7 +12,6 @@ cd student-submission
 if [[ -e ListExamples.java ]]
 then 
     echo "file found"
-    exit 0
 else 
     echo "file not found"
     exit 1
