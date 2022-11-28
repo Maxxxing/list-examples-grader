@@ -19,21 +19,23 @@ public class TestListExamples {
     public void checkFilter() {
         CheckString c = new CheckString();
         List<String> list = new ArrayList<>();
-        list.add("apple"); list.add("banana"); list.add("apricot");
-        List<String> list2 = new ArrayList<>();
-        list2.add("apple"); list2.add("apricot");
-        assertEquals(ListExamples.filter(list,c), list2);
+        list.add("abc");
+        list.add("bbc");
+        list.add("aaa");
+        List<String> result = new ArrayList<>();
+        result.add("abc");
+        result.add("aaa");
+        assertEquals(result, ListExamples.filter(list,c));
     }
 
     @Test
     public void checkMerge() {
-        List<String> list1 = new ArrayList<>();
-        list1.add("apple"); list1.add("banana"); list1.add("duplex");
-        List<String> list2 = new ArrayList<>();
-        list2.add("cucumber"); list2.add("ergonomics"); list2.add("france");
-        List<String> list3 = new ArrayList<>();
-        list3.add("apple"); list3.add("banana"); list3.add("cucumber"); list3.add("duplex");
-        list3.add("ergonomics"); list3.add("france");
-        assertEquals(ListExamples.merge(list1, list2), list3);
+        List<String> student = List.of("a","b","y");
+    
+    List<String> TA = List.of("c","d","z");
+    
+    List<String> result = List.of("a","b", "c","d","y", "z");
+
+    assertEquals(result,ListExamples.merge(student,TA));
     }
 }
