@@ -1,5 +1,7 @@
 # Create your grading script here
 
+CPATH = ".:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar"
+
 rm -rf student-submission
 git clone $1 student-submission
 echo 'Finished cloning'
@@ -17,12 +19,12 @@ else
     exit 1
 fi 
 
-javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java &> compile.txt 
+javac -cp $CPATH *.java &> compile.txt 
 
 if [ $? -eq 0 ]
 then 
     echo "passed"
-    java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore TestListExamples &> result.txt
+    java -cp $CPATH org.junit.runner.JUnitCore TestListExamples &> result.txt
 
     if grep "OK" result.txt
     then 
