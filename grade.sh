@@ -4,14 +4,15 @@ rm -rf student-submission
 git clone $1 student-submission
 echo 'Finished cloning'
 
-cp TestListExamples.java student-submission
-cp -r lib student-submission
+cp TestListExamples.java student-submission/
+cp -r lib student-submission/
 
 cd student-submission
 
 if [[ -e ListExamples.java ]]
 then 
     echo "file found"
+    exit 0
 else 
     echo "file not found"
     exit 1
@@ -33,9 +34,9 @@ then
     then 
         echo "Failed"
     fi
-    
+
 else
-    cat comple.txt
+    cat compile.txt
     echo "Compile error"
     echo "Failed"
     exit 1
