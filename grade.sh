@@ -1,6 +1,5 @@
 # Create your grading script here
 
-SCORE = 0
 rm -rf student-submission
 
 git clone $1 student-submission
