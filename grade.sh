@@ -31,7 +31,7 @@ then
 
     if grep "FAILURES" result.txt
     then 
-        echo "Failed"
+        echo "Test Failed"
     fi
 
 else
